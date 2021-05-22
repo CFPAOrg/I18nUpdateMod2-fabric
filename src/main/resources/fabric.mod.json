@@ -1,29 +1,29 @@
 {
   "schemaVersion": 1,
-  "id": "modid",
+  "id": "i18nupdatemod",
   "version": "${version}",
 
-  "name": "Example Mod",
-  "description": "This is an example description! Tell everyone what your mod is about!",
+  "name": "I18nUpdateMod",
+  "description": "A pack updater of mod language pack",
   "authors": [
-    "Me!"
+    "CFPAOrg"
   ],
   "contact": {
-    "homepage": "https://fabricmc.net/",
-    "sources": "https://github.com/FabricMC/fabric-example-mod"
+    "homepage": "https://cfpa.team/",
+    "sources": "https://github.com/CFPAOrg/I18nUpdateMod2-fabric"
   },
 
   "license": "CC0-1.0",
-  "icon": "assets/modid/icon.png",
+  "icon": "assets/i18nupdatemod/icon.png",
 
   "environment": "*",
   "entrypoints": {
     "main": [
-      "net.fabricmc.example.ExampleMod"
+      "org.cfpa.I18nUpdateMod"
     ]
   },
   "mixins": [
-    "modid.mixins.json"
+    "i18nupdatemod.mixins.json"
   ],
 
   "depends": {
