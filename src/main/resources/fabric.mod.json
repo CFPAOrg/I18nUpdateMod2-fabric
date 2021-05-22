@@ -13,16 +13,19 @@
     "sources": "https://github.com/CFPAOrg/I18nUpdateMod2-fabric"
   },
 
-  "license": "CC0-1.0",
+  "license": "MIT",
   "icon": "assets/i18nupdatemod/icon.png",
 
-  "environment": "*",
+  "environment": "client",
   "entrypoints": {
-    "main": [
+    "client": [
       "org.cfpa.I18nUpdateMod"
     ]
   },
 
+  "mixins": [
+    "i18nupdatemod.mixin.json"
+  ],
 
   "depends": {
     "fabricloader": ">=0.7.4",

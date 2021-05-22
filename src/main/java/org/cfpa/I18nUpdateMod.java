@@ -33,10 +33,15 @@ public class I18nUpdateMod implements ClientModInitializer {
 	public final static String MD5 = "http://downloader1.meitangdehulu.com:22943/1.16.md5";
 	public static String MD5String = "";
 
+	public I18nUpdateMod(){
+		LOGGER.info("Constructing mod...");
+	}
+
+
+
 	@Override
 	public void onInitializeClient() {
-		MinecraftClient mc = MinecraftClient.getInstance();
-		mc.getLanguageManager().setLanguage(new LanguageDefinition("zh_cn","中文（简体）","China",false));
+		//mc.getLanguageManager().setLanguage(new LanguageDefinition("zh_cn","中文（简体）","China",false));
 
 		// 检查主资源包目录是否存在
 		if (!Files.isDirectory(CACHE_DIR)) {
@@ -78,7 +83,7 @@ public class I18nUpdateMod implements ClientModInitializer {
 			return;
 		}
 
-
+		MinecraftClient mc = MinecraftClient.getInstance();
 		if (Files.exists(LANGUAGE_PACK)) {
 			String md5;
 			try {
@@ -104,7 +109,7 @@ public class I18nUpdateMod implements ClientModInitializer {
 				e.printStackTrace();
 				return;
 			}
-			setResourcesRepository(mc);
+			//Util.setResourcesRepository(mc);
 		} else {
 			try {
 				FileUtils.copyURLToFile(new URL(LINK), LANGUAGE_PACK.toFile());
@@ -115,7 +120,7 @@ public class I18nUpdateMod implements ClientModInitializer {
 				return;
 			}
 			try {
-				setResourcesRepository(mc);
+				//Util.setResourcesRepository(mc);
 				//Minecraft.getInstance().getResourcePackRepository().addPackFinder(new LanguagePackFinder());
 			} catch (Exception e) {
 				e.printStackTrace();
@@ -140,7 +145,7 @@ public class I18nUpdateMod implements ClientModInitializer {
 				return;
 			}
 			try {
-				setResourcesRepository(mc);
+				//Util.setResourcesRepository(mc);
 				//Minecraft.getInstance().getResourcePackRepository().addPackFinder(new LanguagePackFinder());
 			} catch (Exception e) {
 				e.printStackTrace();
@@ -148,25 +153,6 @@ public class I18nUpdateMod implements ClientModInitializer {
 			}
 		}
 
-		setResourcesRepository(mc);
-	}
-
-
-
-	public static void setResourcesRepository(MinecraftClient mc){
-		GameOptions options = mc.options;
-		if (!options.resourcePacks.contains("Minecraft-Mod-Language-Modpack-1-16.zip")){
-			mc.options.resourcePacks.add("Minecraft-Mod-Language-Modpack-1-16.zip");
-		}else {
-			List<String> packs = new ArrayList<>(100);
-			packs.add("Minecraft-Mod-Language-Modpack-1-16.zip");
-			packs.addAll(options.resourcePacks);
-			options.resourcePacks = packs;
-		}
-		reloadResources(mc);
-	}
-
-	public static void reloadResources(MinecraftClient mc){
-		mc.reloadResources();
+		//Util.setResourcesRepository(mc);
 	}
 }
