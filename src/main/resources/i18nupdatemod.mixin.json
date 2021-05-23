@@ -1,11 +1,12 @@
 {
-  "required": true,
+  "required": false,
   "minVersion": "0.8",
   "package": "org.cfpa.mixin",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
   ],
   "client": [
+    "MixinBookContents",
     "MinecraftClientMixin"
   ],
   "injectors": {
