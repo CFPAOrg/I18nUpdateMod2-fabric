@@ -21,7 +21,7 @@ public class MinecraftClientMixin {
             MinecraftClient.getInstance().options.resourcePacks.add("Minecraft-Mod-Language-Modpack-1-16.zip");
             MinecraftClient.getInstance().reloadResources();
         }else {
-            List<String> packs = new ArrayList<>(100);
+            List<String> packs = new ArrayList<>(10);
             packs.add("Minecraft-Mod-Language-Modpack-1-16.zip");
             packs.addAll(MinecraftClient.getInstance().options.resourcePacks);
             MinecraftClient.getInstance().options.resourcePacks = packs;
