@@ -1,9 +1,5 @@
-# Fabric Example Mod
+# 自动汉化更新模组Ⅱ
 
-## Setup
-
-For setup instructions please see the [fabric wiki page](https://fabricmc.net/wiki/tutorial:setup) that relates to the IDE that you are using.
-
-## License
-
-This template is available under the CC0 license. Feel free to learn from it and incorporate it in your own projects.
+全新版本的自动汉化更新模组
+- 缓存机制：汉化资源包下载缓存至全局文件夹，所有本机存档共享
+- 校验机制：对缓存资源包进行哈希校验，避免加载损坏资源包导致游戏崩溃
